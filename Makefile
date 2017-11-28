@@ -1,6 +1,5 @@
 all: localchains.pdf
 
-#.ONESHELL:
 localchains.pdf: src/* splncs.bst
 	export TEXINPUTS=.:./src//:; \
 	pdflatex localchains.tex; \
