@@ -1,6 +1,6 @@
 all: localchains.pdf
 
-localchains.pdf: src/* splncs.bst
+localchains.pdf: src/*
 	export TEXINPUTS=.:./src//:; \
 	pdflatex localchains.tex; \
 	bibtex localchains.aux; \
