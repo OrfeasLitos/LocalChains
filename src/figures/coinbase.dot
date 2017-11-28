@@ -1,0 +1,9 @@
+digraph G {
+  graph [bgcolor=transparent, texmode=raw, label="\\textbf{Fig. \\figlabel{fig:coinbase}:} Coinbase transaction"];
+  node [shape="circle"];
+  rankdir=LR;
+
+  A -> CB -> C;
+  A [style=invis];
+  C [style=invis];
+}
