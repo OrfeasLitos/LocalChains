@@ -1,7 +1,54 @@
 \section{Mechanics}
-  There exists a genesis transaction that contains all coins to ever exist. This transaction is hardcoded in the protocol and is by definition valid.
+  There exists a genesis transaction that contains all coins to ever exist. This
+  transaction is hardcoded in the protocol and is by definition valid for all nodes.
   \begin{center}
     \begin{dot2tex}[outputdir=dot2tex/, file=coinbase]
       \input{src/figures/coinbase.dot}
     \end{dot2tex}
   \end{center}
+  All other transactions must have the following attributes to be valid:
+  \begin{itemize}
+    \item Inputs that correspond to valid unspent outputs (UTXOs) of previous
+    transactions.
+    \item Outputs that have a total value that is less than or equal to the total value of
+      the inputs, with a public key corresponding to each output. Each public key can
+      exist only once in the valid and trustworthy DAG of a node\footnote{This is to
+      ensure that a transaction input cannot be connected with two different transaction
+      outputs. It is not entirely clear that this limitation is necessary though.}.
+    \item One signature for each input, made with the private key that corresponds to the
+      public key of the corresponding previous output.
+  \end{itemize}
+  At any point in time, $Alice$ considers a DAG $X$ of transactions as \textit{valid} and
+  \textit{trustworthy}. She may be informed by Charlie about the existence another DAG of
+  transactions, $Y$. To consider this DAG valid, $Alice$ must verify that
+  \begin{itemize}
+    \item all the transactions are valid and
+    \item all root transactions of $Y$ are connected to UTXOs in $X$.
+  \end{itemize}
+  We will later see what course of action she is expected to take in case the second
+  requirement does not hold.
+
+  For example, let $X$ be:
+  \begin{center}
+    \begin{dot2tex}[outputdir=dot2tex/, file=basedag]
+      \input{src/figures/basedag.dot}
+    \end{dot2tex}
+  \end{center}
+  Then $Alice$ would consider $Y_1$ valid, but $Y_2$ invalid:
+  \begin{center}
+    \begin{dot2tex}[outputdir=dot2tex/, file=gooddag]
+      \input{src/figures/gooddag.dot}
+    \end{dot2tex}
+  \end{center}
+  \begin{center}
+    \begin{dot2tex}[outputdir=dot2tex/, file=baddag]
+      \input{src/figures/baddag.dot}
+    \end{dot2tex}
+  \end{center}
+  $X$ and $Y_2$ cannot be valid at the same time because there is a conflict regarding
+  which private key can spend the output of the transaction $B$. The existence of the two
+  versions of the transaction $B$ is proof that $Bob$ attempted to double spend his output
+  from transaction $A$. $Alice$ and $Charlie$ just discovered a proof of fraud commited by
+  $Bob$ and can use this proof of fraud so that one of the two can keep the coins in the
+  transaction DAG and the other can get a refund from the network. Here is where the
+  global part of the infrastructure comes into play.

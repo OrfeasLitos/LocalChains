@@ -1,13 +1,13 @@
 digraph G {
   graph [
     texmode=raw,
-    label="\\textbf{Fig. \\figlabel{fig:coinbase}:} Coinbase transaction"
+    label="\\textbf{Fig. \\figlabel{fig:baddag}:} Bad DAG $Y_2$"
   ];
   node [shape="circle", texmode=math];
   edge [texmode=math];
   rankdir=LR;
 
-  CB -> bar [label="5, Alice"];
+  B -> bar [label="3, Hannah"];
 
   bar [style=invis];
 }

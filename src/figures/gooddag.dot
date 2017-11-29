@@ -1,0 +1,27 @@
+digraph G {
+  graph [
+    texmode=raw,
+    label="\\textbf{Fig. \\figlabel{fig:gooddag}:} Good DAG $Y_1$"
+  ];
+  node [shape="circle", texmode=math];
+  edge [texmode=math];
+  rankdir=LR;
+
+  A -> foo [label="3, Bob"];
+  A -> D [label="2, Dave"];
+  B -> C [label="3, Charlie"];
+  D -> C [label="1, Emily"];
+  C -> baz [label="4, Gary"];
+  D -> bar [label="1, Frank"];
+
+  foo [style=invis];
+  bar [style=invis];
+  baz [style=invis];
+
+  {
+    graph [texlbl=""];
+    rank=same;
+    rankdir=TD;
+    B -> D [style=invis];
+  }
+}

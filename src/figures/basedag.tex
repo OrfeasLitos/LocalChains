@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (211.24bp,11.5bp) node {\textbf{Fig. \figlabel{fig:basedag}:} Base DAG $X$};
+\end{scope}
+  \node (A) at (143.5bp,69.748bp) [draw,ellipse] {$A$};
+  \node (CB) at (22.748bp,69.748bp) [draw,ellipse] {$CB$};
+  \node (B) at (263.24bp,104.75bp) [draw,ellipse] {$B$};
+  \coordinate (baz) at (399.74bp,104.75bp);
+  \coordinate (foo) at (263.24bp,45.748bp);
+  \draw [->] (CB) ..controls (65.142bp,69.748bp) and (94.054bp,69.748bp)  .. (A);
+  \draw (85.496bp,77.248bp) node {$5, Alice$};
+  \draw [->] (A) ..controls (166.22bp,60.733bp) and (173.08bp,58.345bp)  .. (179.5bp,56.748bp) .. controls (195.95bp,52.653bp) and (214.65bp,50.004bp)  .. (foo);
+  \draw (201.0bp,64.248bp) node {$2, Dave$};
+  \draw [->] (B) ..controls (302.74bp,104.75bp) and (340.07bp,104.75bp)  .. (baz);
+  \draw (331.49bp,112.25bp) node {$3, Charlie$};
+  \draw [->] (A) ..controls (180.27bp,80.381bp) and (212.85bp,90.065bp)  .. (B);
+  \draw (201.0bp,100.25bp) node {$3, Bob$};
+%
+\end{tikzpicture}

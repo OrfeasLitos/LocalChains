@@ -1,0 +1,17 @@
+digraph G {
+  graph [
+    texmode=raw,
+    label="\\textbf{Fig. \\figlabel{fig:basedag}:} Base DAG $X$"
+  ];
+  node [shape="circle", texmode=math];
+  edge [texmode=math];
+  rankdir=LR;
+
+  CB -> A [label="5, Alice"];
+  A -> B [label="3, Bob"];
+  A -> foo [label="2, Dave"];
+  B -> baz [label="3, Charlie"];
+
+  foo [style=invis];
+  baz [style=invis];
+}

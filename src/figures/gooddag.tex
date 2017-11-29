@@ -1,0 +1,39 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (209.59bp,11.5bp) node {\textbf{Fig. \figlabel{fig:gooddag}:} Good DAG $Y_1$};
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (209.59bp,11.5bp) node {};
+\end{scope}
+  \node (A) at (18.0bp,138.1bp) [draw,ellipse] {$A$};
+  \node (C) at (273.59bp,112.1bp) [draw,ellipse] {$C$};
+  \node (B) at (137.75bp,121.1bp) [draw,ellipse] {$B$};
+  \coordinate (bar) at (273.59bp,45.098bp);
+  \node (D) at (137.75bp,49.098bp) [draw,ellipse] {$D$};
+  \coordinate (baz) at (396.44bp,112.1bp);
+  \coordinate (foo) at (137.75bp,180.1bp);
+  \draw [->] (B) ..controls (178.56bp,118.42bp) and (218.45bp,115.74bp)  .. (C);
+  \draw (206.0bp,125.6bp) node {$3, Charlie$};
+  \draw [->] (D) ..controls (162.79bp,47.003bp) and (171.03bp,46.419bp)  .. (178.5bp,46.098bp) .. controls (199.37bp,45.2bp) and (222.88bp,44.95bp)  .. (bar);
+  \draw (206.0bp,53.598bp) node {$1, Frank$};
+  \draw [->] (A) ..controls (53.758bp,150.5bp) and (83.983bp,161.28bp)  .. (foo);
+  \draw (75.5bp,172.6bp) node {$3, Bob$};
+  \draw [->] (A) ..controls (53.153bp,112.28bp) and (90.67bp,83.926bp)  .. (D);
+  \draw (75.5bp,117.6bp) node {$2, Dave$};
+  \draw [->] (C) ..controls (310.27bp,112.1bp) and (340.5bp,112.1bp)  .. (baz);
+  \draw (334.69bp,119.6bp) node {$4, Gary$};
+  \draw [->] (D) ..controls (177.33bp,67.26bp) and (220.46bp,87.558bp)  .. (C);
+  \draw (206.0bp,101.6bp) node {$1, Emily$};
+%
+\end{tikzpicture}
