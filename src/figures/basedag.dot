@@ -7,7 +7,7 @@ digraph G {
   edge [texmode=math];
   rankdir=LR;
 
-  CB -> A [label="5, Alice"];
+  CB -> A [label="5, Source"];
   A -> B [label="3, Bob"];
   A -> foo [label="2, Dave"];
   B -> baz [label="3, Charlie"];

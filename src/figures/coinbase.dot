@@ -7,7 +7,7 @@ digraph G {
   edge [texmode=math];
   rankdir=LR;
 
-  CB -> bar [label="5, Alice"];
+  CB -> bar [label="5, Source"];
 
   bar [style=invis];
 }
