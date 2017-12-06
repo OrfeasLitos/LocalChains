@@ -1,7 +1,7 @@
 digraph G {
   graph [
     texmode=raw,
-    label="\\textbf{Fig. \\figlabel{fig:baddag}:} Bad DAG $Y_2$"
+    label="\\textbf{Fig. \\figlabel{fig:badDAG}:} Bad DAG $Y_2$"
   ];
   node [shape="circle", texmode=math];
   edge [texmode=math];

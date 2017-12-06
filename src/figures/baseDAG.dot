@@ -1,7 +1,7 @@
 digraph G {
   graph [
     texmode=raw,
-    label="\\textbf{Fig. \\figlabel{fig:basedag}:} Base DAG $X$"
+    label="\\textbf{Fig. \\figlabel{fig:baseDAG}:} Base DAG $X$"
   ];
   node [shape="circle", texmode=math];
   edge [texmode=math];
