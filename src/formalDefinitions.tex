@@ -1,1 +1,8 @@
 \section{Formal Definitions}
+  \begin{definition}[Trustworthy Transaction]
+    Assume a transaction $A$ spent by $Bob$ is accepted by $Alice$ as valid and she includes
+    it in her transaction DAG. This transaction precedes a transaction $B$ that pays to
+    $Alice$'s address. Let $v$ be the value that $Alice$ can lose from $B$ if $A$ is
+    double spent. $Alice$ deems $A$ trustworthy if $maxFlow\left(Alice, Bob\right) \geq v$
+    on the global trust ledger.
+  \end{definition}
