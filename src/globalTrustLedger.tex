@@ -7,3 +7,27 @@
   be insured in case a previous transaction has been double spent, there has to be some
   kind of global, public commitment from each of the players in question (or someone
   vouching for them) that a refund will be given in case fraud is committed.
+
+  The global ledger consists of a directed graph of refund promises between players in
+  case fraud is committed. In order for $Alice$ to be insured against the double spend of
+  a transaction that lies before a UTXO she can spend, there must be a sufficiently heavy
+  chain of insurances between her and each of the players that spent these preceding
+  transactions. The following examples clarify the concept with regards to the
+  trustworthiness of $Y_1$:
+  \begin{center}
+    \begin{dot2tex}[outputdir=dot2tex/, file=goodTrust]
+      \input{src/figures/goodTrust.dot}
+    \end{dot2tex}
+  \end{center}
+  In this example, if any of $Charlie$, $Dave$ or $Emily$ double spend their money and
+  $Alice$ finds out, then she will post the proof of fraud to the global ledger and
+  $George$ will automatically refund her with the money that he is insuring the fraudster.
+  Observe that there is enough insurance to cover for any individual fraud.
+
+  \begin{center}
+    \begin{dot2tex}[outputdir=dot2tex/, file=badTrust]
+      \input{src/figures/badTrust.dot}
+    \end{dot2tex}
+  \end{center}
+  In this case however, $Alice$ stands entirely uninsured against fraud by $Emily$ and
+  only partly against fraud by $Charlie$. She is well insured against fraud by $Dave$.

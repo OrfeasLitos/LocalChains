@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (246.5bp,11.5bp) node {\textbf{Fig. \figlabel{fig:goodTrust}:} Trust graph that insures $Alice$     from $Y_1$};
+\end{scope}
+  \node (Dave) at (355.79bp,135.5bp) [draw,ellipse] {$Dave$};
+  \node (Charile) at (355.79bp,219.5bp) [draw,ellipse] {$Charile$};
+  \node (Emily) at (355.79bp,55.497bp) [draw,ellipse] {$Emily$};
+  \node (Alice) at (130.71bp,135.5bp) [draw,ellipse] {$Alice$};
+  \node (George) at (240.0bp,135.5bp) [draw,ellipse] {$George$};
+  \draw [->] (George) ..controls (285.53bp,104.19bp) and (304.23bp,91.044bp)  .. (Emily);
+  \draw (297.9bp,106.0bp) node {$1$};
+  \draw [->] (George) ..controls (289.22bp,135.5bp) and (303.35bp,135.5bp)  .. (Dave);
+  \draw (297.9bp,143.0bp) node {$2$};
+  \draw [->] (Alice) ..controls (170.71bp,135.5bp) and (182.13bp,135.5bp)  .. (George);
+  \draw (182.1bp,143.0bp) node {$3$};
+  \draw [->] (George) ..controls (284.27bp,167.44bp) and (302.12bp,180.61bp)  .. (Charile);
+  \draw (297.9bp,187.0bp) node {$3$};
+%
+\end{tikzpicture}

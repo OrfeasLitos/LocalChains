@@ -1,0 +1,14 @@
+digraph G {
+  graph [
+    texmode=raw,
+    label="\\textbf{Fig. \\figlabel{fig:badTrust}:} Trust graph that does not \
+    insure $Alice$ from $Y_1$"
+  ];
+  node [shape="circle", texmode=math];
+  edge [texmode=math];
+  rankdir=LR;
+
+  Alice -> George [label=3];
+  George -> Charile [label=2];
+  George -> Dave [label=5];
+}

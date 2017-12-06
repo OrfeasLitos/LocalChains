@@ -1,0 +1,15 @@
+digraph G {
+  graph [
+    texmode=raw,
+    label="\\textbf{Fig. \\figlabel{fig:goodTrust}:} Trust graph that insures $Alice$ \
+    from $Y_1$"
+  ];
+  node [shape="circle", texmode=math];
+  edge [texmode=math];
+  rankdir=LR;
+
+  Alice -> George [label=3];
+  George -> Charile [label=3];
+  George -> Dave [label=2];
+  George -> Emily [label=1];
+}

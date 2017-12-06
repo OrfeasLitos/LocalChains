@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (265.0bp,11.5bp) node {\textbf{Fig. \figlabel{fig:badTrust}:} Trust graph that does not     insure $Alice$ from $Y_1$};
+\end{scope}
+  \node (Dave) at (374.29bp,52.247bp) [draw,ellipse] {$Dave$};
+  \node (Charile) at (374.29bp,136.25bp) [draw,ellipse] {$Charile$};
+  \node (Alice) at (149.21bp,94.247bp) [draw,ellipse] {$Alice$};
+  \node (George) at (258.5bp,94.247bp) [draw,ellipse] {$George$};
+  \draw [->] (George) ..controls (306.88bp,76.762bp) and (322.96bp,70.825bp)  .. (Dave);
+  \draw (316.4bp,82.747bp) node {$5$};
+  \draw [->] (Alice) ..controls (189.21bp,94.247bp) and (200.63bp,94.247bp)  .. (George);
+  \draw (200.6bp,101.75bp) node {$3$};
+  \draw [->] (George) ..controls (304.72bp,110.94bp) and (318.0bp,115.84bp)  .. (Charile);
+  \draw (316.4bp,123.75bp) node {$2$};
+%
+\end{tikzpicture}
